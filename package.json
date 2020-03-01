@@ -1,0 +1,27 @@
+{
+    "name": "adopt-me-react",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format": "npx prettier \"src/**/*.{js, html}\" --write",
+        "lint": "npx eslint \"src/**/*.{js, jsx}\" --quiet",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/katydatt/adopt-me-react.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/katydatt/adopt-me-react/issues"
+    },
+    "homepage": "https://github.com/katydatt/adopt-me-react#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "eslint-config-prettier": "^6.10.0",
+        "prettier": "^1.19.1"
+    }
+}
