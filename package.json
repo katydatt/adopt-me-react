@@ -28,6 +28,10 @@
         "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
     },
     "devDependencies": {
+        "@babel/core": "^7.8.7",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/preset-env": "^7.8.7",
+        "@babel/preset-react": "^7.8.3",
         "babel-eslint": "^10.1.0",
         "cross-env": "^7.0.1",
         "eslint-config-prettier": "^6.10.0",
