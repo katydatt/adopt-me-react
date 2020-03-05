@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import useDropdown from './useDropdown'
-import Results from './Results'
+import useDropdown from '../components/useDropdown'
+import Results from '../components/Results'
 import pet, { ANIMALS } from '@frontendmasters/pet'
 
 const SearchParams = () => {
