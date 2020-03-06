@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import useDropdown from '../components/useDropdown'
 import Results from '../components/Results'
+import React, { useState, useEffect, useContext } from 'react'
+import UseDropdown from '../components/UseDropdown'
 import pet, { ANIMALS } from '@frontendmasters/pet'
+import ThemeContext from '../components/ThemeContext'
 
 const SearchParams = () => {
     const [location, setLocation] = useState('Seattle, WA')
     const [breeds, setBreeds] = useState([])
-    const [animal, AnimalDropdow] = useDropdown('Animal', 'dog', ANIMALS)
-    const [breed, BreedDropdow, setBreed] = useDropdown('Breed', '', breeds)
+    const [animal, AnimalDropdow] = UseDropdown('Animal', 'dog', ANIMALS)
+    const [breed, BreedDropdow, setBreed] = UseDropdown('Breed', '', breeds)
     const [pets, setPets] = useState([])
+    const [theme, setTheme] = useContext(ThemeContext)
 
     async function requestPets() {
         const { animals } = await pet.animals({
@@ -51,6 +53,19 @@ const SearchParams = () => {
                 </label>
                 <AnimalDropdow />
                 <BreedDropdow />
+                <label htmlFor="theme">
+                    ThemeContext
+                    <select
+                        value={theme}
+                        onChange={e => setTheme(e.target.value)}
+                        onBlur={e => setTheme(e.target.value)}
+                    >
+                        <option value="peru">Peru</option>
+                        <option value="darkblue">Dark Blue</option>
+                        <option value="mediumorchid">Medium Orchid</option>
+                        <option value="chartreuse">Chartreuse</option>
+                    </select>
+                </label>
                 {/* <label html-for="animal">
                     animal
                     <select
@@ -87,7 +102,7 @@ const SearchParams = () => {
                         })}
                     </select>
                 </label> */}
-                <button>Submit</button>
+                <button style={{ backgroundColor: theme }}>Submit</button>
             </form>
             <Results pets={pets} />
         </div>
